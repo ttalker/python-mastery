@@ -43,6 +43,7 @@ class Vector2d():
 v1 = Vector2d((5,6))
 v2 = Vector2d([3, 5])
 v3 = 0
+
 print(v1) # repr
 print(abs(v1)) # abs
 print(bool(v3)) # truthiness dunno what that means
