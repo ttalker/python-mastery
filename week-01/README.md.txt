@@ -18,3 +18,40 @@ __hash__ tells whether an object can be used as a dictionary key or set.
     -> the object must be hashable to be able to be used as a dict key
 
 Important Concepts
+Iterable vs. iterator
+    Iterables produces new Iterators 
+    It is reusable
+    Iterators are consumed once
+    It maintains iteration state
+Example:
+    lst = [1,2,3] this is an iterable
+    it = iter(lst) this is an iterator
+
+Generators
+    consumes less memory
+    need the yield keyword
+
+    yield
+        - > turns a function into a lazy iterator
+    Without generators:
+        all data loads immediately
+    With generators:
+        values produced one at a time
+
+Mutability
+    Mutable objects can change -> list, dict, set
+    Immutable object cannot be changed -> tuple, str, int
+
+    The tuple is immutable but if it contains a mutable obj you can change it
+    Note that this kind of tuple cannot be used as a dictionary key while the others are safe
+
+Default argument trap
+    def add(x, lst=[]):
+    this kind of list will persist throughout the program
+    def add(x, lst=None): this will create a new list everytime 
+        if lst is None:
+            lst = []
+
+How objects store attributes
+    Normal objects are stored in __dict__, it is dynamic but memory heavy
+    __slots__ remove per instance dictionary
