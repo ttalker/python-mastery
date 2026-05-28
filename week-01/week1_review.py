@@ -1,9 +1,7 @@
 # do everything you learned this week
 
-from __future__ import annotations
-import copy
-from dataclasses import dataclass, field
-from typing import Iterator
+
+from dataclasses import dataclass
 
 
 @dataclass
@@ -34,7 +32,7 @@ class Bookshelf():
         return self
     
     def __repr__(self):
-        return f"Shelf {self.name}, {len(shelf)} books"
+        return f"Shelf {self.name}, {len(self)} books"
     def __next__(self):
         if self._idx >= len(self.books):
             raise StopIteration
@@ -55,6 +53,11 @@ class Bookshelf():
     def __contains__(self, title: str) -> bool:
         return any(b.title == title for b in self.books)
 
+    def __add__(self, other):
+        combined = Bookshelf(f"{self.name}+{other.name}")
+        combined.books = self.books + other.books
+        return combined
+    
 b1 = Book("Book1", "Kelvin", 56)
 b2 = Book("Book2", "Kelvin", 56)
 b3 = Book("Book3", "Kelvin", 56)
@@ -71,3 +74,8 @@ print(shelf.books) # print the books
 print("Book1" in shelf) # find a book
 for i in shelf: # iterate through the shelf
     print(i)
+
+newshelf = Bookshelf("Example2")
+newshelf.add_book(b2)
+
+print(shelf + newshelf)
