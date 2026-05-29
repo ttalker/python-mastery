@@ -1,2 +1,5 @@
-Python decorators and closures
+day 8 Python decorators and closures
 
+day 9 MRO, super(), mixins
+
+day 10  Properties, descriptors, __getattr__ 
