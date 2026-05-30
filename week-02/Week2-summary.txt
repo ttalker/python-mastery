@@ -1,5 +1,12 @@
 day 8 Python decorators and closures
 
+A decorator is another function or callable
+A decorator may replace the decorated function with a different one
+Decorators are executed immediately when a module is loaded
+Decorators run at import time, they run after the decorated function is defined
+
+
+
 day 9 MRO, super(), mixins
 
 day 10  Properties, descriptors, __getattr__ 
