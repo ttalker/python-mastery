@@ -92,6 +92,45 @@ print(example2())
 
 # @cache (memoize without functools.lru_cache).
 
+def cache(func):
+
+    # closure state
+    memory = {}
+
+    def wrapper(*args):
+
+        # if arguments already seen
+        if args in memory:
+            print("cache hit")
+
+            return memory[args]
+
+        # compute result
+        result = func(*args)
+
+        # save result
+        memory[args] = result
+
+        return result
+
+    return wrapper
+
+@cache
+def fibonacci(n):
+
+    if n < 2:
+
+        return n
+
+    return (
+        fibonacci(n-1)
+        + fibonacci(n-2)
+    )
+    
+print(fibonacci(20))
+
+print(fibonacci(20))
+
 
 if __name__ == '__main__': 
     main()
