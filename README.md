@@ -7,4 +7,4 @@ The goals of this repository is to be able to create and publish AI machine mode
 Week 1:
     Summary and projects to be updated
 Week2:
-    Day 4 of week 2 or day 11
+    Day 5 of week 2 or day 12
