@@ -5,8 +5,29 @@ A decorator may replace the decorated function with a different one
 Decorators are executed immediately when a module is loaded
 Decorators run at import time, they run after the decorated function is defined
 
+During compile time, python will search for local variables first even if there is a global variable with the same name
+Example
+
+ b =  3
+>>> def f3(a):     
+    print(a) 
+    print(b) 
+    b = 9 
+# this will print a but not b, Unbound Local Error
 
 
 day 9 MRO, super(), mixins
+Mro means method resolution order
+Python uses mro when searching classes for methods
+It means that each class only appears once, and parents come after them
+You can print it with ClassName.__mro__
+super means you call the next class in the mro
+A mixin is a class that provides methods to other classes without being a full standalone class.
+It is a way to add functionality (like serialization, logging, validation) without deep inheritance chains.
 
-day 10  Properties, descriptors, __getattr__ 
+
+day 10 Properties, descriptors, __getattr__ 
+
+day 11 Type hints, @dataclass, Protocol 
+
+day 12Context managers — __enter__, __exit__, @contextmanager
