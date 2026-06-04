@@ -8,3 +8,5 @@ Week 1:
     Summary and projects to be updated
 Week2:
     Day 7 of week 2 or day 14
+Week3:
+    Postponed temporarily til on the job training is finalized
